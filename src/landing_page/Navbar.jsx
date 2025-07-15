@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+const API_BASE = import.meta.env.VITE_API_URL;
+
+
 function Navbar({ showForm, setShowForm, formType, setFormType }) {
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
@@ -9,7 +12,8 @@ function Navbar({ showForm, setShowForm, formType, setFormType }) {
 
   const handleDashboardClick = () => {
     if (token) {
-      window.location.href = "http://localhost:3000"; 
+      window.location.href = import.meta.env.VITE_DASHBOARD_URL;
+
     } else {
       setShowForm(true);
     }
@@ -24,9 +28,9 @@ function Navbar({ showForm, setShowForm, formType, setFormType }) {
     e.preventDefault();
     try {
       const endpoint =
-        formType === "signup"
-          ? "http://localhost:3002/api/auth/register"
-          : "http://localhost:3002/api/auth/login";
+      formType === "signup"
+        ? `${API_BASE}/api/auth/register`
+        : `${API_BASE}/api/auth/login`;
 
       const res = await axios.post(endpoint, formData);
       localStorage.setItem("token", res.data.token);

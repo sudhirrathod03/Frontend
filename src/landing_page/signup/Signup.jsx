@@ -1,3 +1,5 @@
+const API_BASE = import.meta.env.VITE_API_URL;
+
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -20,7 +22,7 @@ function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:3002/api/auth/register", formData);
+      const res = await axios.post(`${API_BASE}/api/auth/register`, formData);
       localStorage.setItem("token", res.data.token);
       navigate("/"); // redirect to home page after signup
     } catch (err) {
