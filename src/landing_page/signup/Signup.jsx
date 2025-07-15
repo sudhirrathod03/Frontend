@@ -41,7 +41,7 @@ function Signup() {
           type="text"
           name="username"
           placeholder="Name"
-          value={formData.name}
+          value={formData.username}
           onChange={handleChange}
           required
         /><br /><br />
