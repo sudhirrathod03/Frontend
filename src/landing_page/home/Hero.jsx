@@ -1,9 +1,7 @@
-
 function Hero({ setShowForm, setFormType }) {
   const isLoggedIn = localStorage.getItem("token");
- 
+
   return (
-    
     <div className="container p-5 mb-5">
       <div className="row text-center">
         <img
@@ -16,18 +14,20 @@ function Hero({ setShowForm, setFormType }) {
           Online platform to invest in stocks, derivatives, mutual funds, ETFs,
           bonds, and more.
         </p>
-         {!isLoggedIn && (
-    <button
-      className="btn btn-primary"
-      style={{ width: "20%", margin: "0 auto" }}
-      onClick={() => {
-        setFormType("signup");
-        setShowForm(true);
-      }}
-    >
-      Sign up for free
-    </button>
-  )}
+        {!isLoggedIn && (
+          <div className="d-flex justify-content-center mb-4">
+            <button
+              className="btn btn-primary btn-lg w-75 w-sm-50 w-md-25"
+              style={{ maxWidth: "300px" }}
+              onClick={() => {
+                setFormType("signup");
+                setShowForm(true);
+              }}
+            >
+              Sign up for free
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
