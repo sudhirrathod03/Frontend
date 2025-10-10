@@ -5,7 +5,6 @@ function Team() {
     <div className="container p-5">
       <h2 className="text-center mx-5 mb-5">People</h2>
       <div className="row d-flex flex-column flex-md-row align-items-start justify-content-center">
-        {/* Left Side - Image */}
         <div className="col-12 col-md-6 d-flex flex-column align-items-center text-center">
           <img
             src="assets/images/nithinKamath.jpg"
@@ -16,7 +15,6 @@ function Team() {
           <p>Founder, CEO</p>
         </div>
 
-        {/* Right Side - Description */}
         <div className="col-12 col-md-6 ceo-des mt-4 ">
           <p>
             Nithin bootstrapped and founded Zerodha in 2010 to overcome the
