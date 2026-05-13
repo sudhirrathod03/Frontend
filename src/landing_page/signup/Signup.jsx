@@ -24,7 +24,7 @@ function Signup() {
     try {
       const res = await axios.post(`${API_BASE}/api/auth/register`, formData);
       localStorage.setItem("token", res.data.token);
-      navigate("/"); // redirect to home page after signup
+      navigate("/"); 
     } catch (err) {
       console.error("Signup Error:", err.response?.data || err.message);
       alert(err.response?.data?.msg || "Registration failed");
