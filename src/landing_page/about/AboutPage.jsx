@@ -4,7 +4,6 @@ import Team from "./Team";
 function AboutPage() {
   return (
     <>
-
       <Hero />
       <Team />
     </>
